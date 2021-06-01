@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.example.mylyricsapp.R
 import com.example.mylyricsapp.databinding.FragmentStartBinding
-import com.example.mylyricsapp.extensions.animeImage
-import com.example.mylyricsapp.extensions.navigateWithAnimations
+import com.example.mylyricsapp.extensions.animateImage
+import com.example.mylyricsapp.extensions.blinking
+import com.example.mylyricsapp.extensions.duplicateSize
+import com.example.mylyricsapp.extensions.gone
+
 
 class StartFragment : Fragment() {
     private var binding: FragmentStartBinding? = null
@@ -28,10 +30,13 @@ class StartFragment : Fragment() {
     }
 
     private fun animateStart() {
+        binding?.tvStartMessage?.blinking()
+
         binding?.ivStartIcon?.setOnClickListener {
-            binding?.ivStartIcon?.animeImage().also {
-                findNavController().navigateWithAnimations(R.id.action_startFragment_to_homeFragment)
-            }
+            binding?.tvStartMessage?.gone()
+            binding?.ivStartIcon?.duplicateSize()
+            binding?.ivStartIcon?.animateImage(R.id.action_startFragment_to_homeFragment)
+
         }
     }
 }

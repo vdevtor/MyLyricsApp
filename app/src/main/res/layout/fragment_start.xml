@@ -16,9 +16,10 @@
            android:layout_height="wrap_content"
            android:layout_marginTop="@dimen/_50sdp"
            app:layout_constraintTop_toTopOf="parent"
+           android:textColor="@color/accent"
            app:layout_constraintStart_toStartOf="parent"
            android:text="@string/start_main_message"
-           android:textSize="@dimen/_15ssp"
+           android:textSize="@dimen/_17ssp"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintBottom_toBottomOf="@id/iv_start_icon"/>
 
