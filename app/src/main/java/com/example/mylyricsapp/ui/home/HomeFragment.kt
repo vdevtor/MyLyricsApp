@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.mylyricsapp.R
+import com.example.mylyricsapp.ui.login.LoginViewModel
 
 class HomeFragment : Fragment() {
 
-
+    private val viewModel: LoginViewModel by activityViewModels()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -18,7 +21,22 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        checkAuthenticationState()
     }
 
+    private fun checkAuthenticationState() {
+
+        viewModel.authenticateStateEvent.observe(viewLifecycleOwner, { authentication ->
+
+            when (authentication) {
+                is LoginViewModel.AuthenticateState.Authenticated -> {
+
+                }
+                is LoginViewModel.AuthenticateState.Unauthenticated -> {
+                    findNavController().navigate(R.id.loginFragment)
+                }
+            }
+        })
+    }
 
 }
