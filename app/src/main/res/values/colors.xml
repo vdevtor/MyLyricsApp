@@ -2,9 +2,18 @@
 <resources>
     <color name="primary">#F67280</color>
     <color name="primaryDark">#C06C84</color>
+    <color name="primarylight">#FF9FBA</color>
+    <color name="primarylightPink">#F34F7D</color>
     <color name="accent">#6C5B7B</color>
     <color name="iconColor">#355C7D</color>
     <color name="colorBackground">#F8B195</color>
+    <color name="colorBackgroundDark">#D58465</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="purple">#412E61</color>
+
+    <!--Blue Palette -->
+    <color name="babyBlue">#20ADED</color>
+    <color name="middleBlue">#1D9CD6</color>
+    <color name="darkBlue">#067BB1</color>
 </resources>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.start.StartFragment">
 
@@ -16,7 +17,7 @@
            android:layout_height="wrap_content"
            android:layout_marginTop="@dimen/_50sdp"
            app:layout_constraintTop_toTopOf="parent"
-           android:textColor="@color/accent"
+           android:textColor="@color/white"
            app:layout_constraintStart_toStartOf="parent"
            android:text="@string/start_main_message"
            android:textSize="@dimen/_17ssp"
@@ -31,6 +32,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/ic_music_icon"
+            app:tint ="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

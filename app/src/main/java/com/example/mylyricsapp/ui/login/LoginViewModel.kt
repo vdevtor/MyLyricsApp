@@ -66,6 +66,10 @@ class LoginViewModel : BaseViewModel() {
         return true
     }
 
+    fun auth(){
+        _authenticatedStateEvent.value = AuthenticateState.Authenticated
+    }
+
     companion object {
         val INPUT_PASSWORD = "INPUT_PASSWORD" to R.string.invalid_password
         val INPUT_USERNAME = "INPUT_USERNAME" to R.string.invalid_username
